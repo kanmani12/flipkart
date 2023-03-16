@@ -12,19 +12,8 @@ pipeline {
                 // Get some code from a GitHub repository
                 git 'https://github.com/kanmani12/flipkart.git'
                 
-                 
-                
-            }
-			stage('Test') {
-            steps {
-              
-                
-                 // To run Maven on a Windows agent, use
-                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
-                
-            }
-
-         
-		}
+              // To run Maven on a Windows agent, use
+                 bat "mvn -Dmaven.test.failure.ignore=true clean package"   
+		}                       
 	}
 }
