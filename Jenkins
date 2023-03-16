@@ -11,13 +11,14 @@ pipeline {
             steps {
                 // Get some code from a GitHub repository
                 git 'https://github.com/kanmani12/flipkart.git'
-
+                
+                 // To run Maven on a Windows agent, use
+                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
                 
             }
 
             stage('Test'){
-                 // To run Maven on a Windows agent, use
-                 bat "mvn -Dmaven.test.failure.ignore=true clean package"
+                
                  
 
             }
